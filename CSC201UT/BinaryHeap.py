@@ -67,7 +67,7 @@ class BinaryHeap:
             c2 = 2 * i + 2
             if (c2 < len(self._heap)):
                 self.print_heap(c2, level + 1)
-            print(f"{'    ' * level}{self.heap[i]}")
+            print(f"{'    ' * level}{self._heap[i]}")
             if (c1 < len(self._heap)):
                 self.print_heap(c1, level + 1)
 
