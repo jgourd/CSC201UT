@@ -10,27 +10,12 @@ from CSC201UT.UnorderedList import UnorderedList
 
 # defines a MazeCell (a cell within the maze/labyrinth)
 class MazeCell:
-#    id = 0
-
     def __init__(self, item=None):
         self._item = item
         self._N = None
         self._S = None
         self._E = None
         self._W = None
-
-        # to make things just a little simpler, let's set an ID for this MazeCell
-#        self._id = MazeCell.id
-        # and increment the class variable
-#        MazeCell.id += 1
-
-    # print(MazeCell) returns its id
-#    def __str__(self):
-#        return str(self._id)
-
-    # a more detailed version of a cell for debugging
-#    def __repr__(self):
-#        return "{}|{}|{},{},{},{}".format(self._id, self._item, self._N, self._S, self._E, self._W)
 
 # support classes and functions for creating mazes and labyrinths
 class MazeUtils:
@@ -246,7 +231,7 @@ class MazeUtils:
         
         return result
 
-    # Clears all the links between the given group of nodes. */
+    # Clears all the links between the given group of nodes.
     def clearGraph(nodes):
         for node in nodes:
             node._item = None
@@ -307,7 +292,7 @@ class MazeUtils:
 
         return True
 
-    # Returns whether the given maze is connected. Uses a BFS. */
+    # Returns whether the given maze is connected. Uses a BFS.
     def isConnected(maze):
         visited = set()
         frontier = UnorderedList()
@@ -405,3 +390,4 @@ class MazeUtils:
                 break
 
         return result
+

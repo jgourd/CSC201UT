@@ -9,6 +9,7 @@ class LogicGate:
         self._label = label
         self._output = None
 
+    """Performs the logic and returns the output."""
     def get_output(self):
         return self.perform_gate_logic()
 
@@ -19,18 +20,21 @@ class BinaryGate(LogicGate):
         self._pin_a = None
         self._pin_b = None
 
+    """Returns the pin A input."""
     def get_pin_a(self):
         if (self._pin_a == None):
             raise RuntimeError("Error: NO PIN INPUT A")
         else:
             return self._pin_a.get_from().get_output()
 
+    """Returns the pin B input."""
     def get_pin_b(self):
         if (self._pin_b == None):
             raise RuntimeError("Error: NO PIN INPUT B")
         else:
             return self._pin_b.get_from().get_output()
 
+    """Sets an input pin."""
     def set_input_pin(self, source):
         if (self._pin_a == None):
             self._pin_a = source
@@ -45,12 +49,14 @@ class UnaryGate(LogicGate):
         super().__init__(label)
         self._pin = None
 
+    """Returns the pin input."""
     def get_pin(self):
         if (self._pin == None):
             raise RuntimeError("Error: NO PIN INPUT")
         else:
             return self._pin.get_from().get_output()
 
+    """Sets the input pin."""
     def set_input_pin(self, source):
         if (self._pin == None):
             self._pin = source
@@ -62,6 +68,7 @@ class AndGate(BinaryGate):
     def __init__(self, label):
         super().__init__(label)
 
+    """Performs the logic and returns the output."""
     def perform_gate_logic(self):
         a = self.get_pin_a()
         b = self.get_pin_b()
@@ -75,6 +82,7 @@ class OrGate(BinaryGate):
     def __init__(self, label):
         super().__init__(label)
 
+    """Performs the logic and returns the output."""
     def perform_gate_logic(self):
         a = self.get_pin_a()
         b = self.get_pin_b()
@@ -88,6 +96,7 @@ class NotGate(UnaryGate):
     def __init__(self, label):
         super().__init__(label)
 
+    """Performs the logic and returns the output."""
     def perform_gate_logic(self):
         if (self.get_pin() == 0):
             return 1
@@ -102,9 +111,11 @@ class Connector:
 
         to_gate.set_input_pin(self)
 
+    """Returns the input gate."""
     def get_from(self):
         return self._from_gate
 
+    """Returns the output gate."""
     def get_to(self):
         return self._to_gate
 
@@ -113,7 +124,8 @@ class Source:
     def __init__(self, label, output=None):
         self._label = label
         self._output = output
-                
+
+    """Returns the source's output."""
     def get_output(self):
         if (self._output == None):
             self._output = int(input(f"Enter pin input {self._label}: "))

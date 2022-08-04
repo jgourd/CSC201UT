@@ -4,6 +4,7 @@ This file includes classes and methods related to the ordered binary tree.
 """
 
 class Node:
+    """Defines a node."""
     def __init__(self, value):
         self._value = value
         self._left = None
@@ -21,7 +22,7 @@ class OrderedBinaryTree:
         else:
             self._insert(self._root, value)
 
-    """insert helper function."""
+    """The insert helper function."""
     def _insert(self, n, value):
         if (not n):
             n = Node(value)
@@ -35,7 +36,7 @@ class OrderedBinaryTree:
     def preorder(self):
         return self._preorder(self._root)
 
-    """Preorder helper function."""
+    """The preorder helper function."""
     def _preorder(self, n):
         if (not n):
             return ""
@@ -45,7 +46,7 @@ class OrderedBinaryTree:
     def inorder(self):
         return self._inorder(self._root)
 
-    """Inorder helper function."""
+    """The inorder helper function."""
     def _inorder(self, n):
         if (not n):
             return ""
@@ -55,7 +56,7 @@ class OrderedBinaryTree:
     def postorder(self):
         return self._postorder(self._root)
 
-    """Postorder helper function."""
+    """The postorder helper function."""
     def _postorder(self, n):
         if (not n):
             return ""
@@ -65,8 +66,9 @@ class OrderedBinaryTree:
     def __str__(self):
         return self._str(self._root)
 
-    """__str__ helper function."""
+    """The __str__ helper function."""
     def _str(self, n, level=0):
         if (not n):
             return ""
         return self._str(n._right, level + 1) + ("\t" * level + str(n._value) + "\n") + self._str(n._left, level + 1)
+

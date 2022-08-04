@@ -10,6 +10,7 @@ class OrderedList:
     def __init__(self):
         self._head = None
 
+    """Adds an item to the list."""
     def add(self, item):
         temp = Node(item)
         current = self._head
@@ -31,9 +32,11 @@ class OrderedList:
             temp._link = current
             previous._link = temp
 
+    """Returns if the list is empty."""
     def is_empty(self):
         return (self._head == None)
 
+    """Returns the list's size."""
     def size(self):
         num = 0
         current = self._head
@@ -45,6 +48,7 @@ class OrderedList:
 
         return num
 
+    """Searches the list for a value."""
     def search(self, value):
         current = self._head
 
@@ -57,7 +61,7 @@ class OrderedList:
 
         return False
 
-    # removes an item from the list
+    """Removes an item from the list."""
     def remove(self, value):
         current = self._head
         previous = None
@@ -84,6 +88,7 @@ class OrderedList:
             # route around the removed node
             previous._link = current._link
 
+    """Returns the list as a string."""
     def __str__(self):
         s = ""
         current = self._head
@@ -95,6 +100,7 @@ class OrderedList:
 
         return s
 
+    """Returns an iterator for the list."""
     def __iter__(self):
         return OrderedListIterator(self._head)
 
@@ -103,9 +109,11 @@ class OrderedListIterator:
     def __init__(self, head):
         self._curr = head
 
+    """Returns the iterator."""
     def __iter__(self):
         return self
 
+    """Traverses to the next node and returns its value."""
     def __next__(self):
         if (not self._curr):
             raise StopIteration
