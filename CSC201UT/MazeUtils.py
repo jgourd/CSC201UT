@@ -8,7 +8,7 @@ from copy import deepcopy
 from math import log
 from CSC201UT.UnorderedList import UnorderedList
 
-# defines a MazeCell (a cell within the maze/labyrinth)
+"""Defines a MazeCell (a cell within the maze/labyrinth)."""
 class MazeCell:
     def __init__(self, item=None):
         self._item = item
@@ -17,7 +17,7 @@ class MazeCell:
         self._E = None
         self._W = None
 
-# support classes and functions for creating mazes and labyrinths
+"""Support classes and functions for creating mazes and labyrinths."""
 class MazeUtils:
     # constants (for randomness)
     HASH_SEED = 5381

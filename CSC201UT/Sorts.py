@@ -7,7 +7,7 @@ from random import randint
 
 VALUES = 500
 
-# the bubble sort
+"""the bubble sort."""
 def bubble_sort(t="random"):
     # generate the appropriate list
     if (t == "random"):
@@ -23,7 +23,7 @@ def bubble_sort(t="random"):
             if (lst[j] > lst[j+1]):
                 lst[j], lst[j+1] = lst[j+1], lst[j]
 
-# the optimized bubble sort
+"""the optimized bubble sort."""
 def optimized_bubble_sort(t="random"):
     # generate the appropriate list
     if (t == "random"):
@@ -43,7 +43,7 @@ def optimized_bubble_sort(t="random"):
         if (not swaps):
             break
 
-# the selection sort
+"""the selection sort."""
 def selection_sort(t="random"):
     # generate the appropriate list
     if (t == "random"):
@@ -61,7 +61,7 @@ def selection_sort(t="random"):
                 max_index = j
         lst[i], lst[max_index] = lst[max_index], lst[i]
 
-# the insertion sort
+"""the insertion sort."""
 def insertion_sort(t="random"):
     # generate the appropriate list
     if (t == "random"):
@@ -80,7 +80,7 @@ def insertion_sort(t="random"):
             j -= 1
         lst[j] = val
 
-# the shell sort
+"""the shell sort."""
 def shell_sort(t="random"):
     # generate the appropriate list
     if (t == "random"):
@@ -97,7 +97,7 @@ def shell_sort(t="random"):
             modified_insertion_sort(lst, i, k)
         k //= 2
 
-# the modified insertion sort (takes a k -- for the shell sort)
+"""the modified insertion sort (takes a k -- for the shell sort)."""
 def modified_insertion_sort(lst, start, k):
     # sort
     for i in range(start + k, len(lst), k):
@@ -108,7 +108,7 @@ def modified_insertion_sort(lst, start, k):
             j -= k
         lst[j] = val
 
-# the merge sort
+"""the merge sort."""
 def merge_sort(t="random"):
     # generate the appropriate list
     if (t == "random"):
@@ -121,7 +121,7 @@ def merge_sort(t="random"):
     # sort
     merge(lst)
 
-# performs the merge function (for the merge sort)
+"""performs the merge function (for the merge sort)."""
 def merge(lst):
     # sort
     if (len(lst) > 1):
@@ -149,7 +149,7 @@ def merge(lst):
             r += 1
             i += 1
 
-# the quick sort
+"""the quick sort."""
 def quick_sort(t="random"):
     # generate the appropriate list
     if (t == "random"):
@@ -162,7 +162,7 @@ def quick_sort(t="random"):
     # sort
     quick(lst, 0, len(lst) - 1)
 
-# the quick sort helper function
+"""the quick sort helper function."""
 def quick(lst, first, last):
     # sort
     if (first < last):
@@ -170,7 +170,7 @@ def quick(lst, first, last):
         quick(lst, first, s_point - 1)
         quick(lst, s_point + 1, last)
 
-# partitions a list (for the quick sort)
+"""partitions a list (for the quick sort)."""
 def partition(lst, first, last):
     pivot = lst[first]
     l_mark = first + 1
