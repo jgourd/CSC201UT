@@ -11,7 +11,7 @@ with open("README.md", "r") as f:
 # setup
 setuptools.setup(
     name="CSC201UT",
-    version="1.0",
+    version="1.1",
     author="Dr. Jean Gourd",
     author_email="jgourd@ut.edu",
     description="Python utilities used in CSC 201 at UT.",

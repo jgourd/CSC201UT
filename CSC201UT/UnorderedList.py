@@ -118,6 +118,8 @@ class UnorderedList:
         if (current._link == None):
             self._tail = previous
 
+        self._len -= 1
+
     """Returns the list as a string."""
     def __str__(self):
         s = ""
