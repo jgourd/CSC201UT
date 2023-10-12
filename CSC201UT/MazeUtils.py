@@ -1,6 +1,9 @@
 """
 Python utilities used in CSC 201 at UT.
 This file includes classes and methods related to the maze and labyrinth "debug".
+Credit to Keith Schwarz (htiek@cs.stanford.edu).
+See http://nifty.stanford.edu/2021/schwarz-linked-list-labyrinth/.
+This is a Python port of his nifty assignment.
 """
 
 from random import seed, shuffle, random, randint
