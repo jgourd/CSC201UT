@@ -76,7 +76,7 @@ class MazeUtils:
                 return False
 
             # can we pick up an item in this cell?
-            if (cell._item):
+            if (cell._item and not cell._item in items):
                 items.append(cell._item)
 
         # did we get all three items?

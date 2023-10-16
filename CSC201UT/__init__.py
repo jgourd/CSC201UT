@@ -16,4 +16,4 @@ from CSC201UT.UnorderedList import *
 
 __author__ = "Dr. Jean Gourd"
 __email__ = "jgourd@ut.edu"
-__version__ = "1.1"
+__version__ = "1.2"
