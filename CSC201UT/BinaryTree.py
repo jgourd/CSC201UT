@@ -27,7 +27,7 @@ class BinaryTree:
         # this node doesn't have a right child
         if (self._right == None):
             self._right = n
-        # this node already has a left child
+        # this node already has a right child
         else:
             n._right = self._right
             self._right = n
