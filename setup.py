@@ -16,7 +16,7 @@ setuptools.setup(
     author_email="jgourd@ut.edu",
     description="Python utilities used in CSC 201 at UT.",
     long_description=long_description,
-    long_description_content_type="ext/markdown",
+    long_description_content_type="text/markdown",
     packages=setuptools.find_packages(),
     classifiers=(
         "Programming Language :: Python :: 3",
